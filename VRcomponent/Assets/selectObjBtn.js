@@ -3,7 +3,8 @@ var text0 : UI.Text;
 var obj0 : GameObject;
 var obj1 : GameObject;
 var obj2 : GameObject;
-private var idx : int=0;
+private var idx : int = 0;
+private var itemNum : int = 3;
 function Start () {
 
 }
@@ -16,13 +17,15 @@ function Update () {
 	{
 		case(0):
 			obj0.SetActive (true);
-			text0.text="s";
+			text0.text= obj0.name;
 			break;
 		case(1):
 			obj1.SetActive (true);
+			text0.text= obj1.name;
 			break;
 		case(2):
 			obj2.SetActive (true);
+			text0.text= obj2.name;
 			break;
 		default:
 			break;
@@ -30,11 +33,11 @@ function Update () {
 }
 
  function prevBtn() {
- 	idx--;
- 	idx = idx%3;
+ 	idx = idx + (itemNum-1);
+ 	idx = idx%itemNum;
  }
 
  function nextBtn() {
  	idx++;
- 	idx = idx%3;
+ 	idx = idx%itemNum;
  }
